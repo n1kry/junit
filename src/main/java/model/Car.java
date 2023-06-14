@@ -1,18 +1,38 @@
+package model;
+
 import java.time.LocalDate;
 import java.util.*;
 
 public class Car implements Comparable<Car> {
-    private final String model;
-    private final String maker;
-    private final String carNumber;
-    private final Integer madeYear;
+    private String model;
+    private String maker;
+    private String carNumber;
+    private Integer madeYear;
     private LocalDate startedRentOn;
     private LocalDate finishedRentOn;
+
+    public Car() {}
 
     public Car(String model, String maker, String carNumber, int madeYear) {
         this.model = model;
         this.maker = maker;
         this.carNumber = carNumber;
+        this.madeYear = madeYear;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public void setMadeYear(Integer madeYear) {
         this.madeYear = madeYear;
     }
 
@@ -64,7 +84,7 @@ public class Car implements Comparable<Car> {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "model.Car{" +
                 "model='" + model + '\'' +
                 ", maker='" + maker + '\'' +
                 ", carNumber='" + carNumber + '\'' +

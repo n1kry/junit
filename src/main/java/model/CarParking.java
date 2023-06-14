@@ -1,3 +1,8 @@
+package model;
+
+import exception.CarParkingCapacityReached;
+import model.Car;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;

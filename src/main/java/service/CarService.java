@@ -1,3 +1,5 @@
+package service;
+
 import dao.CarDao;
 import dao.ICarDao;
 import model.Car;
@@ -18,6 +20,16 @@ public class CarService {
             Car car = new Car();
             car.setModel(resultSet.getString("model"));
             car.setMaker(resultSet.getString("maker"));
+            car.setCarNumber(resultSet.getString("carnumber"));
+            car.setMadeYear(resultSet.getInt("madeyear"));
+            if (resultSet.getDate("startedrenton") != null) {
+                car.setStartedRentOn(resultSet.getDate("startedrenton").toLocalDate());
+            }
+            if (resultSet.getDate("startedrenton") != null) {
+                car.setStartedRentOn(resultSet.getDate("fineshedrenton").toLocalDate());
+            }
+            cars.add(car);
         }
+        return cars;
     }
 }
